@@ -17,7 +17,8 @@
     "paths": {
       "@job-interview-project/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
-      ]
+      ],
+      "@job-interview-project/material": ["libs/material/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

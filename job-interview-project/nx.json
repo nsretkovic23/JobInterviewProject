@@ -39,6 +39,9 @@
     "job-interview-e2e": {
       "tags": [],
       "implicitDependencies": ["job-interview"]
+    },
+    "material": {
+      "tags": []
     }
   }
 }
