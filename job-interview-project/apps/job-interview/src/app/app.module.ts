@@ -10,10 +10,11 @@ import {MaterialModule} from 'libs/material/src/lib/material.module'
 
 import { JobComponent } from './components/job/job.component';
 import { JobListComponent } from './components/job-list/job-list.component';
+import { FilterCardComponent } from './components/filter-card/filter-card.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, JobComponent, JobListComponent],
+  declarations: [AppComponent, HeaderComponent, JobComponent, JobListComponent, FilterCardComponent],
   imports: [BrowserModule, HttpClientModule, BrowserAnimationsModule, MaterialModule],
   providers: [],
   bootstrap: [AppComponent],
