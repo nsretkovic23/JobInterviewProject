@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '@job-interview-project/api-interfaces';
+import { Job, Message } from '@job-interview-project/api-interfaces';
 
 @Component({
   selector: 'job-interview-project-root',
