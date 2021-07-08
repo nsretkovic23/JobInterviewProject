@@ -3,14 +3,17 @@ export interface Message {
 }
 
 export interface Job {
+    id?:string,
     jobTitle:string,
+    jobType:string,
+    seniority:string,
     jobPicture:string,
     companyName:string,
     description:string,
     numberOfCandidates:number,
-    lookingFor:string[],
-    companyOffers:string[],
-    candidates:[{
+    lookingFor:[{demands:string}],
+    companyOffers:[{offers:string}],
+    candidates?:[{
       username:string,
       email:string,
       grade:number
@@ -19,6 +22,7 @@ export interface Job {
 }
 
 export interface Test {
+    id?:string,
     jobId:string,
     numberOfQuestions:number,
     questions:[{
