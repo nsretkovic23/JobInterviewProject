@@ -213,6 +213,56 @@
           }
         }
       }
+    },
+    "models": {
+      "projectType": "library",
+      "root": "libs/models",
+      "sourceRoot": "libs/models/src",
+      "prefix": "job-interview-project",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/models"],
+          "options": {
+            "jestConfig": "libs/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/models/src/**/*.ts",
+              "libs/models/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "schemas": {
+      "projectType": "library",
+      "root": "libs/schemas",
+      "sourceRoot": "libs/schemas/src",
+      "prefix": "job-interview-project",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/schemas"],
+          "options": {
+            "jestConfig": "libs/schemas/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/schemas/src/**/*.ts",
+              "libs/schemas/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

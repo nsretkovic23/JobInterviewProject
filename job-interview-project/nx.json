@@ -42,6 +42,12 @@
     },
     "material": {
       "tags": []
+    },
+    "models": {
+      "tags": []
+    },
+    "schemas": {
+      "tags": []
     }
   }
 }

@@ -18,7 +18,9 @@
       "@job-interview-project/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
       ],
-      "@job-interview-project/material": ["libs/material/src/index.ts"]
+      "@job-interview-project/material": ["libs/material/src/index.ts"],
+      "@job-interview-project/models": ["libs/models/src/index.ts"],
+      "@job-interview-project/schemas": ["libs/schemas/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
