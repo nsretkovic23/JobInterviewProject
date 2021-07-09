@@ -1,0 +1,56 @@
+.jobContainer {
+  margin: 10px;
+  border: 1px solid rebeccapurple;
+  box-shadow: 3px 5px 2px 1px rgba(102, 51, 153, 0.555);
+  border-radius: 5%;
+  display: block;
+  width: 350px;
+  height: 313px;
+  display: flex;
+  flex-direction: column;
+}
+
+.jobTitle {
+  align-self: center;
+}
+
+.jobImg {
+  align-self: center;
+  img {
+    height: 100px;
+    width: 250px;
+  }
+}
+
+.companyName {
+  display: flex;
+  align-self: center;
+  h3 {
+    margin-left: 5px;
+  }
+}
+
+.jobInfo {
+  @mixin infoDivs {
+    display: flex;
+    p {
+      margin-left: 5px;
+    }
+  }
+  margin: 5px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .seniorityDiv,
+  .candidatesDiv,
+  .dateDiv,
+  .locationDiv {
+    @include infoDivs;
+  }
+}
+
+.applyBtn {
+  margin-right: 5px;
+  align-self: flex-end;
+}

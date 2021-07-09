@@ -64,29 +64,29 @@
         }
       }
     },
-    "job-interview": {
+    "jobs-project": {
       "projectType": "application",
-      "root": "apps/job-interview",
-      "sourceRoot": "apps/job-interview/src",
+      "root": "apps/jobs-project",
+      "sourceRoot": "apps/jobs-project/src",
       "prefix": "job-interview-project",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/job-interview",
-            "index": "apps/job-interview/src/index.html",
-            "main": "apps/job-interview/src/main.ts",
-            "polyfills": "apps/job-interview/src/polyfills.ts",
-            "tsConfig": "apps/job-interview/tsconfig.app.json",
+            "outputPath": "dist/apps/jobs-project",
+            "index": "apps/jobs-project/src/index.html",
+            "main": "apps/jobs-project/src/main.ts",
+            "polyfills": "apps/jobs-project/src/polyfills.ts",
+            "tsConfig": "apps/jobs-project/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "apps/job-interview/src/favicon.ico",
-              "apps/job-interview/src/assets"
+              "apps/jobs-project/src/favicon.ico",
+              "apps/jobs-project/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "apps/job-interview/src/styles.scss"
+              "apps/jobs-project/src/styles.scss"
             ],
             "scripts": []
           },
@@ -106,8 +106,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "apps/job-interview/src/environments/environment.ts",
-                  "with": "apps/job-interview/src/environments/environment.prod.ts"
+                  "replace": "apps/jobs-project/src/environments/environment.ts",
+                  "with": "apps/jobs-project/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -127,64 +127,64 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "job-interview:build:production"
+              "browserTarget": "jobs-project:build:production"
             },
             "development": {
-              "browserTarget": "job-interview:build:development"
+              "browserTarget": "jobs-project:build:development"
             }
           },
           "defaultConfiguration": "development",
           "options": {
-            "proxyConfig": "apps/job-interview/proxy.conf.json"
+            "proxyConfig": "apps/jobs-project/proxy.conf.json"
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "job-interview:build"
+            "browserTarget": "jobs-project:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/job-interview/src/**/*.ts",
-              "apps/job-interview/src/**/*.html"
+              "apps/jobs-project/src/**/*.ts",
+              "apps/jobs-project/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/job-interview"],
+          "outputs": ["coverage/apps/jobs-project"],
           "options": {
-            "jestConfig": "apps/job-interview/jest.config.js",
+            "jestConfig": "apps/jobs-project/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "job-interview-e2e": {
-      "root": "apps/job-interview-e2e",
-      "sourceRoot": "apps/job-interview-e2e/src",
+    "jobs-project-e2e": {
+      "root": "apps/jobs-project-e2e",
+      "sourceRoot": "apps/jobs-project-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/job-interview-e2e/cypress.json",
-            "tsConfig": "apps/job-interview-e2e/tsconfig.e2e.json",
-            "devServerTarget": "job-interview:serve:development"
+            "cypressConfig": "apps/jobs-project-e2e/cypress.json",
+            "tsConfig": "apps/jobs-project-e2e/tsconfig.e2e.json",
+            "devServerTarget": "jobs-project:serve:development"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "job-interview:serve:production"
+              "devServerTarget": "jobs-project:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/job-interview-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/jobs-project-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -295,5 +295,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "job-interview"
+  "defaultProject": "jobs-project"
 }

@@ -33,12 +33,12 @@
     "api-interfaces": {
       "tags": []
     },
-    "job-interview": {
+    "jobs-project": {
       "tags": []
     },
-    "job-interview-e2e": {
+    "jobs-project-e2e": {
       "tags": [],
-      "implicitDependencies": ["job-interview"]
+      "implicitDependencies": ["jobs-project"]
     },
     "material": {
       "tags": []
