@@ -1,5 +1,6 @@
 import { Job, Test } from '@job-interview-project/api-interfaces';
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
+import { Observable } from 'rxjs';
 import { JobsService } from '../../services/jobs/jobs.service';
 
 @Controller('jobs')
@@ -9,7 +10,7 @@ export class JobsController {
     constructor(private readonly jobsService : JobsService){}
 
     @Get()
-    async findAll() :Promise<Job[]>{
+    findAll() :Observable<Job[]>{
         return this.jobsService.findAll();
     }
 
