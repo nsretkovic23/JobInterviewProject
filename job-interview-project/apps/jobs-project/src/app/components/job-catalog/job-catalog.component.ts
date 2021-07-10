@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppState } from '../../store/job/app.state';
 
 @Component({
   selector: 'job-catalog-component',
