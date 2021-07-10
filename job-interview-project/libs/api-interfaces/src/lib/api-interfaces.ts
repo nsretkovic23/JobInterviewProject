@@ -3,22 +3,22 @@ export interface Message {
 }
 
 export interface Job {
-    id?:string,
+    _id?:string,
     jobTitle:string,
-    jobType:string,
+    jobType?:string,
     seniority:string,
     jobPicture:string,
     companyName:string,
     description:string,
-    numberOfCandidates:number,
-    lookingFor:[{demands:string}],
-    companyOffers:[{offers:string}],
+    expiryDate:Date,
+    lookingFor:string
+    companyOffers:string,
+    location:string,
     candidates?:[{
       username:string,
       email:string,
       grade:number
     }],
-    testId:string
 }
 
 export interface Test {
