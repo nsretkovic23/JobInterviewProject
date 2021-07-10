@@ -1,8 +1,5 @@
 <div class="postCardsDiv">
-  <job-card-component></job-card-component>
-  <job-card-component></job-card-component>
-  <job-card-component></job-card-component>
-  <job-card-component></job-card-component>
-  <job-card-component></job-card-component>
-  <job-card-component></job-card-component>
+  <div *ngFor="let job of jobs | async">
+    <job-card-component [job]="job"></job-card-component>
+  </div>
 </div>
