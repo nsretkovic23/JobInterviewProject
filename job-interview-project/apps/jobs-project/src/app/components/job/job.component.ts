@@ -15,6 +15,4 @@ export class JobComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  //applyClick() -- kliknut / vodi na stranicu eventa
 }
