@@ -7,13 +7,13 @@ export const JobModel = new mongoose.Schema({
     jobPicture:String,
     companyName:String,
     description:String,
-    numberOfCandidates:Number,
-    lookingFor:[{demands:String}],
-    companyOffers:[{offers:String}],
+    expiryDate:Date,
+    lookingFor:String,
+    companyOffers:String,
+    location:String,
     candidates:[{
         username:String,
         email:String,
         grade:Number
     }],
-    testId:String
 })
