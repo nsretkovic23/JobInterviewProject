@@ -20,6 +20,7 @@ import { JobCatalogComponent } from './components/job-catalog/job-catalog.compon
 import { CreateJobComponent } from './components/create-job/create-job.component';
 import { JobsEffects } from './store/job/jobs.effects';
 import { jobsReducer } from './store/job/jobs.reducer';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { jobsReducer } from './store/job/jobs.reducer';
     FilterCardComponent,
     JobCatalogComponent,
     CreateJobComponent,
+    JobDetailsComponent
   ],
   imports: [
     BrowserModule,
