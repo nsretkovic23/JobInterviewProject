@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Job } from '@job-interview-project/api-interfaces';
 import {Model} from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { JobModel } from 'libs/models/src/lib/jobModel/job.model';
 
 @Injectable()
@@ -10,11 +10,12 @@ export class JobsService {
 
     constructor(@InjectModel('Job') private readonly jobModel:Model<Job>){}
 
-    async findAll() : Promise<Job[]> { //observable?
-        return await this.jobModel.find();
+    findAll() : Observable<Job[]> { //observable?
+        return from(this.jobModel.find());
     }
 
     async findById(id:string): Promise<Job> {
+        console.log("proba")
         return await this.jobModel.findOne({_id:id});
     }
 
