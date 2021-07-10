@@ -15,3 +15,19 @@ export const selectAllJobs = createSelector(
         .filter(job => job != null)
         .map(job => <Job>job)
 );
+
+export const selectAllJobsDictionary = createSelector (
+    selectJobsFeature,
+    (state:JobsState) => state.entities
+)
+
+export const selectSelectedJobId = createSelector(
+    selectJobsFeature,
+    (state: JobsState) => state.selectedJobId
+)
+
+export const selectSelectedJob = createSelector(
+    selectAllJobsDictionary,
+    selectSelectedJobId,
+    (jobs, selectedJobId) => selectedJobId && jobs ? jobs[selectedJobId] : null
+)

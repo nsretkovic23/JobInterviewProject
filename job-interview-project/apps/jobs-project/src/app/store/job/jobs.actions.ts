@@ -14,3 +14,8 @@ export const createJob = createAction(
     "Create Job",
     props<{job:Job}>()
 )
+
+export const selectJob = createAction(
+    "Select Job",
+    props<{jobId:string}>()
+)
