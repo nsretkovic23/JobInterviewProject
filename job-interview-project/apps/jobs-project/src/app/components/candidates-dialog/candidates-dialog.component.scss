@@ -1,0 +1,14 @@
+.candidatesContainer {
+}
+
+.candidate {
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 4px rgb(121, 120, 120);
+  padding: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(121, 120, 120);
+  p {
+    margin-left: 5px;
+  }
+}
