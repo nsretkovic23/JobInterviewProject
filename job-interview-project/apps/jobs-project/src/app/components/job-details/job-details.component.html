@@ -1,66 +1,86 @@
 <div *ngIf="selectedJob" class="jobDetailsContainer">
+  <button
+    mat-raised-button
+    (click)="deleteJob()"
+    color="primary"
+    class="deleteBtn"
+    routerLink="/"
+  >
+    <mat-icon>delete_forever</mat-icon>
+  </button>
+  <div class="jobTitle">
+    <mat-card class="titleCards">
+      <mat-card-title>{{ selectedJob.jobTitle }}</mat-card-title>
+    </mat-card>
+  </div>
 
-    <div class = "jobTitle">
-        <mat-card class="titleCards">
-            <mat-card-title>{{selectedJob.jobTitle}}</mat-card-title>
-        </mat-card>
+  <div class="jobPicture">
+    <img src="{{ selectedJob.jobPicture }}" />
+  </div>
+
+  <div class="companyName">
+    <mat-card class="titleCards">
+      <mat-card-title>
+        <mat-icon> business</mat-icon>
+        {{ selectedJob.companyName }}
+      </mat-card-title>
+    </mat-card>
+  </div>
+
+  <div class="descriptionDiv">
+    <h1><mat-icon>description</mat-icon> About the job</h1>
+    <p>{{ selectedJob.description }}</p>
+  </div>
+
+  <div class="weOfferDiv">
+    <h1><mat-icon>star</mat-icon> We Offer</h1>
+    <p>{{ selectedJob.companyOffers }}</p>
+  </div>
+
+  <div class="weNeedDiv">
+    <h1><mat-icon>contact_support</mat-icon> We Are Looking For</h1>
+    <p>{{ selectedJob.lookingFor }}</p>
+  </div>
+
+  <div class="infoDiv">
+    <div class="seniorityDiv">
+      <mat-icon>timeline</mat-icon>
+      <p>Seniority: {{ selectedJob.seniority }}</p>
     </div>
 
-    <div class = "jobPicture">
-        <img 
-            src="{{selectedJob.jobPicture}}"
-        />
+    <div class="dateDiv">
+      <mat-icon>date_range</mat-icon>
+      <p>Apply until: {{ selectedJob.expiryDate | date: 'mediumDate' }}</p>
     </div>
 
-    <div class = "companyName">
-        <mat-card class="titleCards">
-            <mat-card-title>
-            <mat-icon> business</mat-icon>
-                {{selectedJob.companyName}}
-            </mat-card-title>
-        </mat-card>
+    <div class="candidatesDiv" (click)="candidatesDialog()">
+      <mat-icon>person</mat-icon>
+      <p>Candidates: {{ selectedJob.candidates?.length }}</p>
     </div>
+  </div>
 
-    <div class="descriptionDiv">
-        <h1>
-            <mat-icon>description</mat-icon> About the job
-        </h1>
-        <p>{{selectedJob.description}}</p>
-    </div>
-
-    <div class="weOfferDiv">
-        <h1>
-            <mat-icon>star</mat-icon> We Offer
-        </h1>
-        <p>{{selectedJob.companyOffers}}</p>
-    </div>
-
-    <div class="weNeedDiv">
-        <h1>
-            <mat-icon>contact_support</mat-icon> We Are Looking For
-        </h1>
-        <p>{{selectedJob.lookingFor}}</p>
-    </div>
-
-    <div class="infoDiv">
-        <div class="seniorityDiv">
-            <mat-icon>timeline</mat-icon>
-             <p>Seniority: {{selectedJob.seniority}}</p>
-        </div>
-
-        <div class="dateDiv">
-            <mat-icon>date_range</mat-icon>
-            <p>Apply until: {{selectedJob.expiryDate | date:'mediumDate'}}</p>
-        </div>
-
-        <div class="candidatesDiv">
-            <mat-icon>person</mat-icon>
-            <p>Candidates: {{selectedJob.candidates?.length}}</p>
-          </div>
-    </div>
-
-    <button mat-raised-button color="primary" class="applyButton">
-        Apply
-    </button>
-
+  <mat-accordion multi>
+    <mat-expansion-panel class="applyForm">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Apply for this job </mat-panel-title>
+        <mat-panel-description>
+          Enter your personal data
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput #usernameInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput #emailInput type="email" />
+      </mat-form-field>
+      <mat-action-row>
+        <button mat-raised-button color="primary" (click)="applyForJob()">
+          Apply
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
