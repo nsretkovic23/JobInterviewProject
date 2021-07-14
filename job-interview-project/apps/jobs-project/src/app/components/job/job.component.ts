@@ -7,12 +7,10 @@ import { Job } from '@job-interview-project/api-interfaces';
   styleUrls: ['./job.component.scss'],
 })
 export class JobComponent implements OnInit {
-
-  @Input() job:Job | null = null;
-  @Output() onClick:EventEmitter<Job> = new EventEmitter<Job>();
+  @Input() job: Job | null = null;
+  @Output() onClick: EventEmitter<Job> = new EventEmitter<Job>();
 
   constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

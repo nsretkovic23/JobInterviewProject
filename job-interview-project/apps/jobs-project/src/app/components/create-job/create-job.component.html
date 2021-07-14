@@ -1,82 +1,122 @@
 <div class="createJobContainer">
-    <div class="create">
+  <div class="create">
     <mat-card class="jobTitle-card" color="primary">
-        <mat-card-title>Create New Job</mat-card-title>
+      <mat-card-title>Create New Job</mat-card-title>
     </mat-card>
-    </div>  
+  </div>
 
-    <div class="inputs">
+  <div class="inputs">
     <mat-form-field class="titleInput" appearance="fill">
-        <mat-label>Job Title:</mat-label>
-        <input matInput placeholder="Ex. Game Dev" #titleInput value="" class="textColor">
+      <mat-label>Job Title:</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Game Dev"
+        #titleInput
+        value=""
+        class="textColor"
+      />
     </mat-form-field>
 
     <mat-form-field class="descriptionInput" appearance="fill">
-        <mat-label>Enter Description:</mat-label>
-        <textarea matInput #descriptionText placeholder="Ex. Do you wanna become Web Developer?..." class="textColor textArea"></textarea>
+      <mat-label>Enter Description:</mat-label>
+      <textarea
+        matInput
+        #descriptionText
+        placeholder="Ex. Do you wanna become Web Developer?..."
+        class="textColor textArea"
+      ></textarea>
     </mat-form-field>
 
     <mat-form-field class="lookingForOptions" appearance="fill">
-        <mat-label>We are looking for:</mat-label>
-        <textarea matInput #lookingForText placeholder="Ex. 2 years experience in Angular..." class="textColor textArea"></textarea>
+      <mat-label>We are looking for:</mat-label>
+      <textarea
+        matInput
+        #lookingForText
+        placeholder="Ex. 2 years experience in Angular..."
+        class="textColor textArea"
+      ></textarea>
     </mat-form-field>
 
     <mat-form-field class="weOfferOptions" appearance="fill">
-        <mat-label>We are offering:</mat-label>
-        <textarea matInput #weOfferText placeholder="Ex. professional environment..." class="textColor textArea"></textarea>
+      <mat-label>We are offering:</mat-label>
+      <textarea
+        matInput
+        #weOfferText
+        placeholder="Ex. professional environment..."
+        class="textColor textArea"
+      ></textarea>
     </mat-form-field>
 
     <div class="pickerInputsContainer">
-        <mat-form-field appearance="fill" class="pickerInput">
-            <mat-label>Pick seniority</mat-label>
-            <mat-select [(value)]="selectedSeniority" required>
-              <mat-option value="Senior">Senior</mat-option>
-              <mat-option value="Medior">Medior</mat-option>
-              <mat-option value="Junior">Junior</mat-option>
-              <mat-option value="Intern">Intern</mat-option>
-            </mat-select>
-          </mat-form-field>
+      <mat-form-field appearance="fill" class="pickerInput">
+        <mat-label>Pick seniority</mat-label>
+        <mat-select [(value)]="selectedSeniority" required>
+          <mat-option value="Senior">Senior</mat-option>
+          <mat-option value="Medior">Medior</mat-option>
+          <mat-option value="Junior">Junior</mat-option>
+          <mat-option value="Intern">Intern</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-          <mat-form-field appearance="fill" class="pickerInput">
-            <mat-label>Pick job type</mat-label>
-            <mat-select [(value)]="selectedJobType">
-              <mat-option value="All">Other</mat-option>
-              <mat-option value="Web Development">Web Development</mat-option>
-              <mat-option value="Game Development">Game Development</mat-option>
-              <mat-option value="DevOps">DevOps</mat-option>
-              <mat-option value="Machine Learning">Machine Learning</mat-option>
-              <mat-option value="Data Analyst">Data Analyst</mat-option>
-            </mat-select>
-          </mat-form-field>
+      <mat-form-field appearance="fill" class="pickerInput">
+        <mat-label>Pick job type</mat-label>
+        <mat-select [(value)]="selectedJobType">
+          <mat-option value="All">Other</mat-option>
+          <mat-option value="Web Development">Web Development</mat-option>
+          <mat-option value="Game Development">Game Development</mat-option>
+          <mat-option value="DevOps">DevOps</mat-option>
+          <mat-option value="Machine Learning">Machine Learning</mat-option>
+          <mat-option value="Data Analyst">Data Analyst</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-          <mat-form-field appearance="fill" class="pickerInput">
-            <mat-label>Valid until</mat-label>
-            <input matInput #datePicker [min]="minDate" [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker ></mat-datepicker>
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="pickerInput">
+        <mat-label>Valid until</mat-label>
+        <input matInput #datePicker [min]="minDate" [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
     </div>
 
     <mat-form-field class="titleInput" appearance="fill">
-        <mat-label>Company name:</mat-label>
-        <input matInput #companyNameInput placeholder="Your company name..." class="textColor">
+      <mat-label>Company name:</mat-label>
+      <input
+        matInput
+        #companyNameInput
+        placeholder="Your company name..."
+        class="textColor"
+      />
     </mat-form-field>
 
     <mat-form-field class="titleInput" appearance="fill">
-        <mat-label>Location:</mat-label>
-        <input matInput #locationInput placeholder="Company location..." class="textColor">
+      <mat-label>Location:</mat-label>
+      <input
+        matInput
+        #locationInput
+        placeholder="Company location..."
+        class="textColor"
+      />
     </mat-form-field>
 
     <mat-form-field class="pictureInput" appearance="fill">
-        <mat-label>Picture URL:</mat-label>
-        <input matInput #pictureUrlInput placeholder="Provide picture URL" value="https://miro.medium.com/max/480/1*9A6E9kaZZ54idy0HLSlh-A.png" class="textColor">
+      <mat-label>Picture URL:</mat-label>
+      <input
+        matInput
+        #pictureUrlInput
+        placeholder="Provide picture URL"
+        value="https://miro.medium.com/max/480/1*9A6E9kaZZ54idy0HLSlh-A.png"
+        class="textColor"
+      />
     </mat-form-field>
 
-    <button mat-raised-button (click)="saveJob()" color="primary" class="createButton">
-        Create
-      </button>
-    </div>
-
-
-
+    <button
+      mat-raised-button
+      (click)="saveJob()"
+      color="primary"
+      class="createButton"
+      routerLink="/"
+    >
+      Create
+    </button>
+  </div>
 </div>

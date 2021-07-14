@@ -1,43 +1,41 @@
 <div *ngIf="job" class="jobContainer">
   <div class="jobTitle">
-    <h2>{{job?.jobTitle}}</h2>
+    <h2>{{ job?.jobTitle }}</h2>
   </div>
 
   <div class="jobImg">
-    <img
-      src="{{job?.jobPicture}}"
-    />
+    <img src="{{ job?.jobPicture }}" />
   </div>
 
   <div class="companyName">
     <mat-icon> business</mat-icon>
-    <h3>{{job?.companyName}}</h3>
+    <h3>{{ job?.companyName }}</h3>
   </div>
 
   <div class="jobInfo">
     <div class="seniorityDiv">
       <mat-icon>timeline</mat-icon>
-      <p>Seniority: {{job?.seniority}}</p>
+      <p>Seniority: {{ job?.seniority }}</p>
     </div>
 
     <div class="candidatesDiv">
       <mat-icon>person</mat-icon>
-      <p>Candidates: {{job?.candidates?.length}}</p>
+      <p>Candidates: {{ job?.candidates?.length }}</p>
     </div>
 
     <div class="dateDiv">
       <mat-icon>date_range</mat-icon>
-      <p>{{job?.expiryDate | date:'mediumDate'}}</p>
+      <p>{{ job?.expiryDate | date: 'mediumDate' }}</p>
     </div>
 
     <div class="locationDiv">
       <mat-icon>location_on</mat-icon>
-      <p>{{job?.location}}</p>
+      <p>{{ job?.location }}</p>
     </div>
   </div>
 
   <div class="applyBtn">
-    <button mat-stroked-button  color="primary" routerLink="/job/{{job?._id}}">
+    <button mat-stroked-button color="primary" routerLink="/job/{{ job?._id }}">
       Details <mat-icon>fast_forward</mat-icon>
     </button>
   </div>
