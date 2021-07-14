@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'filter-card-component',
@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter-card.component.scss'],
 })
 export class FilterCardComponent implements OnInit {
+  @Output() filterEvent = new EventEmitter<string>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  filterClicked(filterJobsString: string) {
+    this.filterEvent.emit(filterJobsString);
+  }
 }
