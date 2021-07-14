@@ -1,2 +1,4 @@
-<filter-card-component></filter-card-component>
-<job-list-component></job-list-component>
+<filter-card-component
+  (filterEvent)="filterJobs($event)"
+></filter-card-component>
+<job-list-component [filterString]="filter"></job-list-component>
