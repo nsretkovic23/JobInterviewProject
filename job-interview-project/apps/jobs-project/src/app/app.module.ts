@@ -21,6 +21,7 @@ import { CreateJobComponent } from './components/create-job/create-job.component
 import { JobsEffects } from './store/job/jobs.effects';
 import { jobsReducer } from './store/job/jobs.reducer';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { CandidatesDialogComponent } from './components/candidates-dialog/candidates-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
     FilterCardComponent,
     JobCatalogComponent,
     CreateJobComponent,
-    JobDetailsComponent
+    JobDetailsComponent,
+    CandidatesDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
     BrowserAnimationsModule,
     MaterialModule,
     StoreModule.forRoot(
-      {jobs:jobsReducer},
+      { jobs: jobsReducer },
       {
         metaReducers: !environment.production ? [] : [],
         runtimeChecks: {
