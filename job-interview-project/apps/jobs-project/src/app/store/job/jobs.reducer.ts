@@ -1,28 +1,34 @@
-import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
-import { createReducer, on } from "@ngrx/store";
-import { Job } from "@job-interview-project/api-interfaces";
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { createReducer, on } from '@ngrx/store';
+import { Job } from '@job-interview-project/api-interfaces';
 import * as Actions from './jobs.actions';
-import { state } from "@angular/animations";
+import { state } from '@angular/animations';
 
-export interface JobsState extends EntityState<Job>{
-    selectedJobId : string | null;
+export interface JobsState extends EntityState<Job> {
+  selectedJobId: string | null;
+  filterJobsString: string | null;
 }
 
-const adapter : EntityAdapter<Job> = createEntityAdapter<Job>({
-    selectId: (job:Job) => job._id ? job._id : ""
+const adapter: EntityAdapter<Job> = createEntityAdapter<Job>({
+  selectId: (job: Job) => (job._id ? job._id : ''),
 });
 
-const initialState : JobsState = adapter.getInitialState({
-    selectedJobId: null,
+const initialState: JobsState = adapter.getInitialState({
+  selectedJobId: null,
+  filterJobsString: null,
 });
 
 export const jobsReducer = createReducer(
-    initialState,
-    on(Actions.loadJobsSuccess, (state, {jobs}) => adapter.setAll(jobs, state)),
-    on(Actions.selectJob, (state, {jobId}) => ({
-        ...state,
-        selectedJobId:jobId
-    })
-    )
+  initialState,
+  on(Actions.loadJobsSuccess, (state, { jobs }) => adapter.setAll(jobs, state)),
 
-)
+  on(Actions.selectJob, (state, { jobId }) => ({
+    ...state,
+    selectedJobId: jobId,
+  })),
+
+  on(Actions.filterJobs, (state, { filterJobsString }) => ({
+    ...state,
+    filterJobsString: filterJobsString,
+  }))
+);
