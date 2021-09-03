@@ -8,6 +8,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class FilterCardComponent implements OnInit {
   @Output() filterEvent = new EventEmitter<string>();
 
+  filters: string[] = [
+    'All',
+    'Web Development',
+    'Game Development',
+    'DevOps',
+    'Machine Learning',
+    'Data Analyst',
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
