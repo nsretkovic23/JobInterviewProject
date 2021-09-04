@@ -1,5 +1,5 @@
 <div class="postCardsDiv">
-  <div *ngFor="let job of jobs | async">
+  <div *ngFor="let job of (jobs | async)?.slice()?.reverse()">
     <job-card-component [job]="job"></job-card-component>
   </div>
 </div>
