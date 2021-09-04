@@ -5,6 +5,9 @@ import { JobCatalogComponent } from './components/job-catalog/job-catalog.compon
 import { JobComponent } from './components/job/job.component';
 import { CreateJobComponent } from './components/create-job/create-job.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { LoginFormComponent } from './components/user-system/login-form/login-form.component';
+import { SignupUserComponent } from './components/user-system/signup-user/signup-user.component';
+import { SignupCompanyComponent } from './components/user-system/signup-company/signup-company.component';
 
 const routes: Routes = [
   {
@@ -19,6 +22,19 @@ const routes: Routes = [
     path: 'job/:id',
     component: JobDetailsComponent,
   },
+  {
+    path: 'login',
+    component: LoginFormComponent,
+  },
+  {
+    path: 'user/signup',
+    component: SignupUserComponent
+  },
+  {
+    path: 'company/signup',
+    component: SignupCompanyComponent
+  },
+  // TODO: Add Company and User profile page routes
   {
     path: '**',
     redirectTo: '',
