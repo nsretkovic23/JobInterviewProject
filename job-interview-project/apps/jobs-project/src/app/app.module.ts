@@ -22,6 +22,11 @@ import { JobsEffects } from './store/job/jobs.effects';
 import { jobsReducer } from './store/job/jobs.reducer';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
 import { CandidatesDialogComponent } from './components/candidates-dialog/candidates-dialog.component';
+import { LoginFormComponent } from './components/user-system/login-form/login-form.component';
+import { SignupUserComponent } from './components/user-system/signup-user/signup-user.component';
+import { SignupCompanyComponent } from './components/user-system/signup-company/signup-company.component';
+import { UserProfilePageComponent } from './components/user-system/user-profile-page/user-profile-page.component';
+import { CompanyProfilePageComponent } from './components/user-system/company-profile-page/company-profile-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,11 @@ import { CandidatesDialogComponent } from './components/candidates-dialog/candid
     CreateJobComponent,
     JobDetailsComponent,
     CandidatesDialogComponent,
+    LoginFormComponent,
+    SignupUserComponent,
+    SignupCompanyComponent,
+    UserProfilePageComponent,
+    CompanyProfilePageComponent,
   ],
   imports: [
     BrowserModule,
