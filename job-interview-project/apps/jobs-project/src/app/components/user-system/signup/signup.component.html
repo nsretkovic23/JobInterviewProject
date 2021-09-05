@@ -1,0 +1,155 @@
+<div class="signupContainer">
+  <mat-tab-group dynamicHeight>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tabIcon">person</mat-icon>
+        User
+      </ng-template>
+      <form (ngSubmit)="onUserSignUp" name="userSignupForm" [formGroup]="userSignupForm">
+      <div class="userFormContainer">
+        <mat-card>
+          <mat-card-content>
+            <mat-form-field appearance="fill" color="warn" class="full-width">
+              <mat-label>Full Name</mat-label>
+              <input
+                matInput
+                placeholder="eg. John Doe"
+                formControlName = "userFullName"
+                required
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" color="warn" class="full-width">
+                <mat-label>Email</mat-label>
+                <input
+                  matInput
+                  placeholder="pat@example.com"
+                  formControlName = "userEmail"
+                  required
+                />
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" color="warn" class="full-width">
+                <mat-label>Password</mat-label>
+                <input
+                  matInput
+                  [type]="hidePassword ? 'password' : 'text'"
+                  formControlName = "userPassword"
+                  required
+                />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hidePassword = !hidePassword"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hidePassword"
+                >
+                  <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" color="warn" class="full-width">
+                <mat-label>Profile Picture URL</mat-label>
+                <input
+                  matInput
+                  placeholder="Your profile picture URL"
+                  formControlName = "userPicture"
+                />
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" color="warn" class="full-width">
+                <mat-label>Describe yourself!</mat-label>
+                <textarea matInput formControlName = "userDescription" cdkTextareaAutosize #autosize="cdkTextareaAutosize"cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" placeholder="Ex. I am a web developer..."></textarea>
+              </mat-form-field>
+
+              <button mat-raised-button class="full-width" color="warn" (click)="onUserSignUp()">
+                Create Account
+              </button>
+              
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </form>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tabIcon">business</mat-icon>
+         Company
+      </ng-template>
+      <form (ngSubmit)="onCompanySignUp()" name = "companySignupForm" [formGroup]="companySignupForm">
+      <div class="companyFormContainer">
+        <mat-card>
+          <mat-card-content>
+            <mat-form-field appearance="fill" color="warn" class="full-width">
+                <mat-label>Company Name</mat-label>
+                <input
+                  matInput
+                  placeholder="eg. Electronic Arts"
+                  formControlName="companyFullName"
+                  required
+                />
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill" color="warn" class="full-width">
+                  <mat-label>Email</mat-label>
+                  <input
+                    matInput
+                    placeholder="pat@example.com"
+                    formControlName="companyEmail"
+                    required
+                  />
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill" color="warn" class="full-width">
+                  <mat-label>Password</mat-label>
+                  <input
+                    matInput
+                    [type]="hidePassword ? 'password' : 'text'"
+                    formControlName="companyPassword"
+                    required
+                  />
+                  <button
+                    mat-icon-button
+                    matSuffix
+                    (click)="hidePassword = !hidePassword"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hidePassword"
+                  >
+                    <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                  </button>
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill" color="warn" class="full-width">
+                  <mat-label>Profile Picture URL</mat-label>
+                  <input
+                    matInput
+                    placeholder="Your company profile picture URL"
+                    formControlName="companyPicture"
+                  />
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill" color="warn" class="full-width">
+                  <mat-label>Describe your company!</mat-label>
+                  <textarea matInput formControlName="companyDescription" cdkTextareaAutosize #autosize="cdkTextareaAutosize"cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" placeholder="Eg. We are making video games..."></textarea>
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill" color="warn" class="full-width">
+                  <mat-label>Location</mat-label>
+                  <input
+                    matInput
+                    formControlName="companyLocation"
+                    required
+                  />
+                </mat-form-field>
+
+                <button mat-raised-button class="full-width" color="warn">
+                  Create Account
+                </button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </form>
+    </mat-tab>
+  </mat-tab-group>
+</div>

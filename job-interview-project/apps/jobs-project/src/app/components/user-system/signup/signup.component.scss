@@ -1,0 +1,23 @@
+:host{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// TODO: Rework for small widths
+.signupContainer{
+    width: 40%;
+}
+
+mat-card{
+    background-color: rgba(103, 123, 180, 0.555);
+}
+
+.userFormContainer, .companyFormContainer{
+    margin-top: 5px;
+}
+
+.full-width{
+    width: 100%;
+}
