@@ -5,7 +5,7 @@
         <mat-icon class="tabIcon">person</mat-icon>
         User
       </ng-template>
-      <form (ngSubmit)="onUserSignUp" name="userSignupForm" [formGroup]="userSignupForm">
+      <form (ngSubmit)="onUserSignUp()" name="userSignupForm" [formGroup]="userSignupForm">
       <div class="userFormContainer">
         <mat-card>
           <mat-card-content>
@@ -62,7 +62,7 @@
                 <textarea matInput formControlName = "userDescription" cdkTextareaAutosize #autosize="cdkTextareaAutosize"cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" placeholder="Ex. I am a web developer..."></textarea>
               </mat-form-field>
 
-              <button mat-raised-button class="full-width" color="warn" (click)="onUserSignUp()">
+              <button mat-raised-button class="full-width" color="warn">
                 Create Account
               </button>
               
