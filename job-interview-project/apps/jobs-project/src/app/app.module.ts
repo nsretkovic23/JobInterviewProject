@@ -27,6 +27,8 @@ import { SignupUserComponent } from './components/user-system/signup-user/signup
 import { SignupCompanyComponent } from './components/user-system/signup-company/signup-company.component';
 import { UserProfilePageComponent } from './components/user-system/user-profile-page/user-profile-page.component';
 import { CompanyProfilePageComponent } from './components/user-system/company-profile-page/company-profile-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './components/user-system/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { CompanyProfilePageComponent } from './components/user-system/company-pr
     SignupCompanyComponent,
     UserProfilePageComponent,
     CompanyProfilePageComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { CompanyProfilePageComponent } from './components/user-system/company-pr
     RouterModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     StoreModule.forRoot(
       { jobs: jobsReducer },
