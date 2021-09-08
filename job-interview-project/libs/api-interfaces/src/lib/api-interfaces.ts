@@ -17,6 +17,27 @@ export interface Job {
   candidates?: Candidate[];
 }
 
+export interface User{
+  _id?:string;
+  userFullName:string;
+  userEmail:string;
+  userPassword:string;
+  userPicture:string;
+  userDescription:string;
+  jobsApplied:Job[];
+}
+
+export interface Company{
+  _id?:string;
+  companyFullName:string;
+  companyEmail:string;
+  companyPassword:string;
+  companyPicture:string;
+  companyDescription:string;
+  companyLocation:string;
+  companyJobs:Job[];
+}
+
 export interface Candidate {
   _id?: string;
   username: string;
