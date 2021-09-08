@@ -8,6 +8,7 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
 import { LoginFormComponent } from './components/user-system/login-form/login-form.component';
 import { SignupUserComponent } from './components/user-system/signup-user/signup-user.component';
 import { SignupCompanyComponent } from './components/user-system/signup-company/signup-company.component';
+import { SignupComponent } from './components/user-system/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginFormComponent,
+  },
+  {
+    path: 'signup',
+    // TODO: Make Universal signup component and switch between tabs through user and company signup components
+    component: SignupComponent
   },
   {
     path: 'user/signup',
