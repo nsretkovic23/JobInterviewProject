@@ -5,19 +5,21 @@
 }
 
 .bodyContentDiv {
-  margin-top: 10px;
-  display: flex;
-  flex: 1 1 auto;
-}
-
-.sidebar {
   display: flex;
   flex-grow: 1;
-  flex-basis: 300px;
-  border: 1px solid white;
+  flex: 1 1 auto;
   background-color: rgba(102, 51, 153, 0.541);
-  margin-top: -10px;
+  justify-content: center;
 }
+
+// .sidebar {
+//   display: flex;
+//   flex-grow: 1;
+//   flex-basis: 300px;
+//   border: 1px solid white;
+//   background-color: rgba(102, 51, 153, 0.541);
+//   margin-top: -10px;
+// }
 
 .jobList {
   flex-grow: 5;
