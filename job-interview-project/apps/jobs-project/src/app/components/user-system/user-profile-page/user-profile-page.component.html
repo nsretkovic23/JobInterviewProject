@@ -1,1 +1,16 @@
-<p>user-profile-page works!</p>
+<div *ngIf="user" class="userProfileContainer">
+    <mat-card class="example-card">
+        <img mat-card-lg-image src="{{user.userPicture}}" >
+        <mat-card-title-group>
+            <mat-card-title>{{user.userFullName}}</mat-card-title>
+            <mat-card-subtitle>{{user.userEmail}}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          {{user.userDescription}}
+        </mat-card-content>
+      </mat-card>
+</div>
+
+<div *ngIf="!user">
+    USER NE POSTOJI
+</div>

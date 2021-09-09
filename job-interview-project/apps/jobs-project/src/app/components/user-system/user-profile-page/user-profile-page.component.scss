@@ -1,0 +1,17 @@
+:host{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userProfileContainer{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-card{
+    background-color: rebeccapurple;
+}
