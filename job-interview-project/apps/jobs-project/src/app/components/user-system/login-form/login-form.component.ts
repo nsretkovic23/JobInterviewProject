@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { User } from '@job-interview-project/api-interfaces';
+import { Store } from '@ngrx/store';
+import { map } from 'rxjs/operators';
+import { UserService } from '../../../services/user.services';
+import { AppState } from '../../../store/job/app.state';
+import { signInUser } from '../../../store/user/user.actions';
 
 @Component({
   selector: 'login-form',
@@ -15,16 +21,14 @@ export class LoginFormComponent implements OnInit {
     Validators.minLength(6),
   ]);
 
-  constructor(private loginSnackBar: MatSnackBar) {}
+  constructor(private loginSnackBar: MatSnackBar, private userService:UserService, private store:Store<AppState>) {}
 
   ngOnInit(): void {}
 
-  // TODO: Open one snack bar if there is invalid input and open one more if server checked inputs and there is no user
   openSnackBar() {
     this.loginSnackBar.open('Check Your Inputs!', 'OK', { duration: 2000 });
   }
 
-  // TODO: Check for errors in one if statement and give "universal" answer for potential errors
   onLogin() {
     if (
       this.email.hasError('required') ||
@@ -35,7 +39,9 @@ export class LoginFormComponent implements OnInit {
       this.openSnackBar();
       return;
     }
-    console.log(this.email.value);
-    console.log(this.password.value);
+    console.log("clicked login")
+
+   this.store.dispatch(signInUser({userEmail:this.email.value, userPassword:this.password.value}))
+    
   }
 }
