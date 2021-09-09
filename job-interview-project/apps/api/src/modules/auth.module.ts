@@ -8,10 +8,25 @@ import { CompanyService } from '../services/company/company.service';
 import { UserService } from '../services/user/user.service';
 import { CompanyModule } from './company.module';
 import { UserModule } from './user.module';
+import { JwtModule } from '@nestjs/jwt';
+import { environment } from '../environments/environment';
+import { LocalStrategy } from '../services/auth/strategies/local.strategy';
+import { JwtStrategy } from '../services/auth/strategies/jwt-auth.strategy';
 
 @Module({
-    imports:[CompanyModule,UserModule, MongooseModule.forFeature([{name:'User', schema: UserSchema},{name:'Company', schema: CompanySchema}])],
-    controllers: [AuthController],
-    providers: [AuthService, UserService, CompanyService]
-  })
-  export class AuthModule {}
+  imports: [
+    CompanyModule,
+    UserModule,
+    MongooseModule.forFeature([
+      { name: 'User', schema: UserSchema },
+      { name: 'Company', schema: CompanySchema },
+    ]),
+    JwtModule.register({
+      secret: environment.JWT_SECRET,
+      signOptions: { expiresIn: '1h' },
+    }),
+  ],
+  controllers: [AuthController],
+  providers: [AuthService, UserService, CompanyService, LocalStrategy, JwtStrategy],
+})
+export class AuthModule {}
