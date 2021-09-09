@@ -9,7 +9,8 @@
   </button>
 
   <div class="navigationButtonsContainer">
-    <button
+
+    <button *ngIf="this.signedInUser != null"
       mat-raised-button
       color="primary"
       class="createJobButton navButton"
@@ -23,7 +24,34 @@
       class="findJobButton navButton"
       routerLink="/"
     >
-      Find a Job
+     <mat-icon>search</mat-icon> Search Jobs
+    </button>
+
+    <button *ngIf="this.signedInUser != null"
+      mat-raised-button
+      color="accent"
+      class="ProfileButton navButton"
+      routerLink = "/user/{{signedInUser._id}}"
+    >
+      <mat-icon>person</mat-icon> {{signedInUser.userFullName}}
+    </button>
+
+    <button *ngIf="this.signedInUser != null"
+      mat-raised-button
+      (click) = "logout()"
+      color="warn"
+      class="LogoutButton navButton"
+    >
+      Logout
+    </button>
+
+    <button *ngIf="this.signedInUser == null"
+      mat-raised-button
+      color="accent"
+      class="signInButton navButton"
+      routerLink="/signin"
+    >
+      SignIn
     </button>
   </div>
 </div>

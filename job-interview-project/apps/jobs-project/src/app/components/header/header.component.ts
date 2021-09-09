@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { User } from '@job-interview-project/api-interfaces';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../store/job/app.state';
 
 @Component({
   selector: 'header-component',
@@ -6,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  @Input() signedInUser : User | null;
+  @Output() signOutTriggered = new EventEmitter<boolean>();
+
+  constructor() {this.signedInUser = null}
+
+
 
   ngOnInit(): void {}
+
+  logout(){
+    this.signOutTriggered.emit(true);
+  }
 }
