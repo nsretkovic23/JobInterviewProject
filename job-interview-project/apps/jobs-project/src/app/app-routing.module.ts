@@ -9,6 +9,8 @@ import { LoginFormComponent } from './components/user-system/login-form/login-fo
 import { SignupUserComponent } from './components/user-system/signup-user/signup-user.component';
 import { SignupCompanyComponent } from './components/user-system/signup-company/signup-company.component';
 import { SignupComponent } from './components/user-system/signup/signup.component';
+import { UserProfilePageComponent } from './components/user-system/user-profile-page/user-profile-page.component';
+import { UserAuthGuard } from '../guards/user-guard';
 
 const routes: Routes = [
   {
@@ -18,29 +20,26 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateJobComponent,
+    canActivate:[UserAuthGuard]
   },
   {
     path: 'job/:id',
     component: JobDetailsComponent,
   },
   {
-    path: 'login',
+    path: 'signin',
     component: LoginFormComponent,
+    canActivate:[UserAuthGuard]
   },
   {
     path: 'signup',
-    // TODO: Make Universal signup component and switch between tabs through user and company signup components
-    component: SignupComponent
+    component: SignupComponent,
+    canActivate:[UserAuthGuard]
   },
   {
-    path: 'user/signup',
-    component: SignupUserComponent
+    path: 'user/:id',
+    component:UserProfilePageComponent
   },
-  {
-    path: 'company/signup',
-    component: SignupCompanyComponent
-  },
-  // TODO: Add Company and User profile page routes
   {
     path: '**',
     redirectTo: '',
