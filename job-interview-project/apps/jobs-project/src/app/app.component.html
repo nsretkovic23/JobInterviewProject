@@ -1,6 +1,6 @@
 <div class="appContainer">
   <div class="headerDiv">
-    <header-component></header-component>
+    <header-component [signedInUser]="signedInUser | async" (signOutTriggered)="signOut()"></header-component>
   </div>
 
   <div class="bodyContentDiv">
