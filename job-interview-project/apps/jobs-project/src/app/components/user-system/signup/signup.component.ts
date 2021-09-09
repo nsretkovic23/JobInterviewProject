@@ -7,7 +7,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { User } from '@job-interview-project/api-interfaces';
+import { Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
+import { AppState } from '../../../store/job/app.state';
+import { signUpUser } from '../../../store/user/user.actions';
 
 @Component({
   selector: 'job-interview-project-signup',
@@ -22,7 +26,8 @@ export class SignupComponent implements OnInit {
     private _ngZone: NgZone,
     private userFormBuilder: FormBuilder,
     private companyFormBuilder: FormBuilder,
-    private signupSnackBar:MatSnackBar
+    private signupSnackBar:MatSnackBar,
+    private store:Store<AppState>
   ) {}
 
   ngOnInit(): void {}
@@ -71,7 +76,8 @@ export class SignupComponent implements OnInit {
       this.openSnackBar();
       return;
     }
-    console.log(this.userSignupForm.value);
+    let newUser :User = this.userSignupForm.value; 
+    this.store.dispatch(signUpUser({user:newUser}))
   }
 
   onCompanySignUp() {
