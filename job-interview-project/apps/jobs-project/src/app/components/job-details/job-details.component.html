@@ -60,26 +60,22 @@
   </div>
 
   <mat-accordion multi>
-    <mat-expansion-panel class="applyForm">
+    <mat-expansion-panel (click)="applyPanelExpanded()" class="applyForm">
       <mat-expansion-panel-header>
         <mat-panel-title> Apply for this job </mat-panel-title>
         <mat-panel-description>
-          Enter your personal data
+          Apply With Your Account
           <mat-icon>account_circle</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <mat-form-field appearance="fill">
-        <mat-label>Username</mat-label>
-        <input matInput #usernameInput />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput #emailInput type="email" />
-      </mat-form-field>
       <mat-action-row>
-        <button mat-raised-button color="primary" (click)="applyForJob()">
+        <button *ngIf="!isSignedInUserAlreadyApplied && signedInUser != null" mat-raised-button color="primary" (click)="applyForJob()">
           Apply
         </button>
+        <button *ngIf="signedInUser == null" mat-raised-button color="primary" routerLink = "/signin">
+          Sign In To Apply!
+        </button>
+        <label *ngIf="isSignedInUserAlreadyApplied">You applied!</label>
       </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>
