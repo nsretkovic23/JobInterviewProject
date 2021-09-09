@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Job } from '@job-interview-project/api-interfaces';
 import { catchError } from 'rxjs/operators';
@@ -25,19 +25,31 @@ export class JobsService {
 
   createJob(job: Job) {
     return this.httpClient
-      .post<Job>(`${environment.apiURL}/jobs`, job)
+      .post<Job>(`${environment.apiURL}/jobs`, job, {
+        headers: new HttpHeaders({
+          "Authorization":`Bearer ${localStorage.getItem("JWT_TOKEN")}` 
+        })
+      })
       .pipe(catchError(errorHandler));
   }
 
   updateJob(job: Job) {
     return this.httpClient
-      .put<Job>(`${environment.apiURL}/jobs/${job._id}`, job)
+      .put<Job>(`${environment.apiURL}/jobs/${job._id}`, job, {
+        headers: new HttpHeaders({
+          "Authorization":`Bearer ${localStorage.getItem("JWT_TOKEN")}` 
+        })
+      })
       .pipe(catchError(errorHandler));
   }
 
   deleteJob(id: string) {
     return this.httpClient
-      .delete<Job>(`${environment.apiURL}/jobs/${id}`)
+      .delete<Job>(`${environment.apiURL}/jobs/${id}`,{
+        headers: new HttpHeaders({
+          "Authorization":`Bearer ${localStorage.getItem("JWT_TOKEN")}` 
+        })
+      })
       .pipe(catchError(errorHandler));
   }
 }
