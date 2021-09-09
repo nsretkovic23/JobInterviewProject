@@ -13,8 +13,10 @@ export const JobModel = new mongoose.Schema({
   location: String,
   candidates: [
     {
+      // ex username, email
+      userId: String,
       username: String,
-      email: String,
+      email:String
     },
   ],
 });
