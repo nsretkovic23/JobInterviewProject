@@ -39,7 +39,7 @@ export interface Company{
 }
 
 export interface Candidate {
-  _id?: string;
+  userId?: string;
   username: string;
   email: string;
 }
