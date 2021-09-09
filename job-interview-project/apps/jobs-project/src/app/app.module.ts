@@ -29,6 +29,10 @@ import { UserProfilePageComponent } from './components/user-system/user-profile-
 import { CompanyProfilePageComponent } from './components/user-system/company-profile-page/company-profile-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './components/user-system/signup/signup.component';
+import { userReducer } from './store/user/user.reducer';
+import { UserEffects } from './store/user/user.effects';
+import { RouteEffects } from './store/global/routing/route.effects';
+import { UserAuthGuard } from '../guards/user-guard';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,8 @@ import { SignupComponent } from './components/user-system/signup/signup.componen
     ReactiveFormsModule,
     MaterialModule,
     StoreModule.forRoot(
-      { jobs: jobsReducer },
+      { jobs: jobsReducer,
+        user:userReducer },
       {
         metaReducers: !environment.production ? [] : [],
         runtimeChecks: {
@@ -66,7 +71,7 @@ import { SignupComponent } from './components/user-system/signup/signup.componen
         },
       }
     ),
-    EffectsModule.forRoot([JobsEffects]),
+    EffectsModule.forRoot([JobsEffects, UserEffects, RouteEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreDevtoolsModule.instrument({
       maxAge: 25,
