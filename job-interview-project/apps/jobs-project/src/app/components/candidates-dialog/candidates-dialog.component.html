@@ -1,9 +1,8 @@
 <h1 mat-dialog-title>All candidates</h1>
 <div mat-dialog-content>
-  <div *ngFor="let candidate of data" class="candidatesContainer">
+  <div *ngFor="let candidate of data" class="candidatesContainer" (click)="routeToUser(candidate.userId)">
     <div class="candidate">
       <mat-icon>person</mat-icon>
-      <p>{{ candidate.username }}</p>
       <p>{{ candidate.email }}</p>
     </div>
   </div>

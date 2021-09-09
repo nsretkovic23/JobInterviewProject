@@ -1,4 +1,5 @@
-.candidatesContainer {
+.candidatesContainer :hover{
+  cursor: pointer;
 }
 
 .candidate {
@@ -9,6 +10,14 @@
   flex-wrap: wrap;
   background-color: rgb(121, 120, 120);
   p {
-    margin-left: 5px;
+    margin: 15px;
   }
+
+  justify-content: center;
+  align-items: center;
+}
+
+mat-icon{
+  margin-left: 10px;
+  background-color: rebeccapurple;
 }
